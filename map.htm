@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps with Store Location</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIkTnAJnFA3WS9rrKaP2A7xhEwPzYURvM&callback=initMap&language=en" async defer></script>
+    <style>
+        #map {
+            height: 600px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Google Maps - Centered on Your Location</h1>
+    <div id="map"></div>
+
+    <script>
+        let map;
+
+        function initMap() {
+            // Default location in case geolocation is not available
+            const defaultLocation = { lat: 28.8241, lng: 30.8997 }; // Al-Fashn
+            
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: defaultLocation,
+                zoom: 10
+            });
+
+            // Try to get the user's location
+            // if (navigator.geolocation) {
+            //     navigator.geolocation.getCurrentPosition(
+            //         (position) => {
+            //             const userLocation = {
+            //                 lat: position.coords.latitude,
+            //                 lng: position.coords.longitude
+            //             };
+
+                        // Recenter the map to user's location
+                        // map.setCenter(userLocation);
+
+                        // Add a marker at user's location
+                        new google.maps.Marker({
+                            position: defaultLocation,
+                            map: map,
+                            title: "You are here!"
+                        });
+                    // },
+                    // () => {
+                    //     handleLocationError(true, map.getCenter());
+                    // }
+                // );
+            // } else {
+                // Browser doesn't support Geolocation
+                // handleLocationError(false, map.getCenter());
+            // }
+        }
+         
+    
+        function handleLocationError(browserHasGeolocation, pos) {
+            const infoWindow = new google.maps.InfoWindow({
+                position: pos,
+                content: 'cake app location'
+                    ? "Error: The Geolocation service failed."
+                    : "Error: Your browser doesn't support geolocation."
+            });
+            infoWindow.open(map);
+        }
+    </script>
+</body>
+</html>

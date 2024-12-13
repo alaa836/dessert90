@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sweet Treats</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style> 
+
+
+.header {
+    background-color: #50270a3f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.content {
+    max-width: 600px;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.footer {
+ 
+    
+    text-align: center;
+    padding: 10px 0;
+}
+
+.rowpy-2{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+}
+  
+.rty{
+         display: flex;
+         justify-content: flex-end;
+         flex-wrap: nowrap;
+}
+.rty:hover{
+       transform:translate(0,-10px);
+        color: rgb(71, 38, 11);
+}
+ 
+.hide_cart-d {
+        display:none;
+        opacity:0;
+         color: red;
+         height: 0;
+        cursor: pointer
+ }
+.square-holder{
+        padding: 30px;
+        border: 1px solid #cecece;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        background-color: #f1f1f1;
+        min-height: 200px
+}
+.square-holder img {
+    max-width: 100%;
+}
+.container_about {
+        padding: 30px;
+        border-radius: 10px;
+        margin: 30px auto;
+        color: black;
+} 
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding: 2rem 9%;
+}
+.header .logo{
+    color:var(--main-color);
+    font-size: 2.3rem;
+}
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+
+.header #btn:hover{
+    background-color: rgb(196, 160, 95);
+    color: white;
+    border: #443;
+    border-radius: var(--main-color);
+}
+.header .btn{
+    margin-top: 0;
+}
+.header .logo{
+    color:var(--main-color);
+    font-size: 2.3rem;
+}
+.header .logo i{
+    padding-left: .5rem;
+}
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+.header .btn{
+    margin-top: 0;
+}
+.navbar a:hover{
+    color:white;
+    /*background-color: #2e1700;*/
+    background-color: rgb(196, 160, 95);
+}
+.btn:hover{
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding: 2rem 9%;
+}
+.btn{
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--main-color);
+    background: none;
+    border: var(--border);
+    cursor: pointer;      /*عشان لما يشاور يدي علامه اليد*/
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&diplay=swap');
+:root{
+    --main-color:#443;
+    --border-radius:95% 4% 97% 5% / 4% 94% 3% 95%;
+    --border-radius-hover:4% 95% 6% 95% / 95% 4% 92% 5%;
+    --border:.2rem solid var(--main-color);
+    --border-hover:.2rem dashed var(--main-color);
+}
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline:none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+/* body{
+    /*background-color: aliceblue;
+    background-image: url(../../Pictures/download\ \(32\).jpeg );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} */
+body{
+    /*background-color: aliceblue;*/
+    background-image: url(../../Pictures/download\ \(32\).jpeg );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+/*footer start*/
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(23rem,1fr));
+    gap: 1.5rem;
+}
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: var(--main-color);
+}
+.footer .box-container .box a{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: var(--main-color);
+    display: block;
+}
+.footer .box-container .box a i{
+    padding-right: .5rem;
+}
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+.footer .credit{
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    color: var(--main-color);
+}
+.footer .credit span{
+    border-bottom: var(--border-hover);
+}
+.navbar a:hover{
+    color:white;
+    /*background-color: #2e1700;*/
+    background-color: rgb(196, 160, 95);
+}
+/*footer end*/
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="#" class="logo">Dera Dessert <i class='bx bxs-cake'></i></i></a>
+        <nav class="navbar">
+            <a href="./Project-delivery.htm">Home</a>
+            <a href="./About .htm">About Us</a>
+            <a href="./product.htm">Categories</a>
+            <a href="./Cake.htm">Cake</a>
+            <a href="./cart2.html">Cart</a>
+            <a href="#contact">Review</a>
+            <a href="./Contact Us.htm">Contact Us</a>
+            <!--<a href="./login.html" target="_blank">Log in</a></a>-->
+        </nav>
+            <a href="./booking.htm" class="btn">book a cake</a>
+            <a href="./login.htm" class= "btn" id="btn">Log in</a>
+    </header>
+    <section class="about" style="margin-top: 100px;">
+        <div class="content">
+            <h1 style="font-size: 30px; margin-bottom: 10px;">About Us</h1>
+            <h2 style="font-size: 25px;">Welcome to Sweet Treats</h2>
+            <p style="font-size: 15px;">
+                At Dera Dessert, we are passionate about creating delicious and beautiful desserts for every occasion. Founded in 2010, our mission is to bring joy to your celebrations with our handcrafted sweets.
+            </p>
+            <p style="font-size: 12px;">
+                Our team uses the finest ingredients to ensure every bite is unforgettable. Whether you're looking for cakes, pastries, or chocolates, Sweet Treats has something special for you.
+            </p>
+        </div>
+        <img  name="photo" style="width: 20%;" src="../../Pictures/download (10).jpeg" alt="Delicious desserts" class="about-image">
+    </section>
+    <hr>
+    <div class="our_bakery_text">
+        <h2  style="text-align: center; font-size: 20px; margin-top: 20px;"> Our Partners </h2>
+        <p style="text-align: center; font-size: 12px ; margin-top: 10px;" class="bot1">&nbsp;Quality is everything we think about. We are dedicated to provide the highest level of food and service quality to our guests</p>
+        <div class="rowpy-2">
+                <div class="col-sm-6 col-md-5 col-lg-4" style="margin-top: 30px;">
+                    <div class="square-holder">
+                        <img alt="" src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-12-01 في 21.01.30_3e3e73c2.jpg" style="width: 100px;height: 100px; display: flex;">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4" style="margin-top: 30px;">
+                    <div class="square-holder">
+                        <img alt="" src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-12-01 في 21.01.50_ab3b3f30.jpg" style="width: 100px; height: 100px; display: flex;">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4" style="margin-top: 30px;">
+                    <div class="square-holder">
+                        <img alt="" src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-12-01 في 21.03.30_496a94fa - Copy.jpg" style="width: 100px; height: 100px; display: flex;"/>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <section class="footer" style="margin-top: 20px;" >
+        <div class="box-container">
+            <div class="box">
+                <h3>Our Branches</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i>India</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>USA</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>France</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Africa</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Japan</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i>Home</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>About Us</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Menu</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Cake</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Review</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>ontact Us</a>
+            </div>
+            <div class="box">
+                <h3>Contact info</h3>
+                <a href="#"><i class="fas fa-phone"></i>+123-456-7890</a>
+                <a href="#"><i class="fas fa-phone"></i>+111-222-3333</a>
+                <a href="#"><i class="fas fa-envelope"></i>shaikhanas@gmail.com</a>
+                <a href="#"><i class="fas fa-envelope"></i>mumbai,india=400104</a>
+            </div>
+            <div class="box">
+                <h3>Contact info</h3>
+                <a href="#"><i class="fab fa-facebook"></i>facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+            </div>
+        </div>
+        <div class="credit">creatd by<span>mr.web designer</span>all rights reserved</div>
+        <section>
+            <div style="text-align: center;">
+                <h4>Dera desert@gmail.com|Powered by Dera desert Shop</h4>
+            </div>
+        </section>
+    </section>
+     
+      <!--footer end-->
+  
+<script>
+
+        var images = ["1.jpg","2.jpg","3.jpg","4.jpg"]
+var i = 0
+
+var timer
+document.photo.addEventListener('mouseover', function (e) {
+    timer = setInterval(function () {
+        i++
+        if (i >= images.length) {
+            i = 0
+        }
+        e.target.src = images[i]
+    }, 1000)
+})
+
+document.photo.addEventListener('mouseout', function (e) {
+    clearInterval(timer)
+})
+    </script>
+
+<script src="bootstrap.js"></script>
+
+
+</body>
+</html>

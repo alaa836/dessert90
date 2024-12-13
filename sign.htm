@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "poppins",sans-serif;
+        }
+        .img{
+            background-image: url(../../Pictures/download\ \(10\).jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+        }
+        /*.img::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0,0,0,0.7) ;
+        }*/
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-box{
+            position: relative;
+            width: 400px;
+            height: 550px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);    /* عشان الباك جراوند تبقى شفافه*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-box h2{
+            color:#fff;
+            text-align: center;
+            font-size: 32px;
+        }
+        .form-box .input-box{
+            position: relative;
+            margin: 30px 0;
+            width: 310px;
+            border-bottom: 2px solid #fff;
+        }
+        .form-box .input-box input{
+            width: 100%;
+            height: 45px;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 0 20px 0 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+        input::placeholder{
+            color: #fff;
+        }
+        .btn{
+            color: #fff;
+            background: rgb(143, 110, 49);
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            box-shadow: 3px 0 10px rgba(0, 0, 0, .5);
+        }
+        .group{
+            display: flex;
+            justify-content: space-between;
+        }
+        .group span a{
+            color: #fff;
+            position: relative;
+            top: 10px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .group a:focus{
+            text-decoration: underline;
+        }
+        i{
+            position: absolute;
+            color: #fff;
+            top: 13px;
+            right: 0;
+        }
+        #result{
+            color: rgb(143, 110, 49);
+            font-weight: 600;
+            position: relative;
+            top: 25px;
+        }
+        .popup{
+            width: 400px;
+            background-color: #fff;
+            border-radius: 6px;
+            position: absolute;
+            top:0;
+            left:50%;
+            transform: translate(-50%,-50%) scale(0);
+            transition: transform .4s , top .4s;
+            visibility: hidden;
+            text-align: center;
+            padding: 0 30px 30px;
+            height: 330px;
+            color: black;
+        }
+        .popup ion-icon{
+            color: #00ff00;
+            font-size: 50px;
+        }
+        .popup button{
+            width: 100%;
+            background: #00ff00;
+            padding: 10px 0;
+            margin-top: 50px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, .1);
+        }
+        .popup a{
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .open-slide{
+            top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+            visibility: visible;
+        }
+        .popup h2{
+            font-weight: 500;
+            font-size: 38px;
+            margin: 30px 0 10px;
+        }
+    </style>
+      
+    
+</head>
+<body>
+    <div class="img">
+        <div class="container">
+            <div class="form-box">
+                <form action="" name="formfill" onsubmit="return validation()">
+                    <h2>Register</h2>
+                    <p id="result"></p>
+                    <div class="input-box">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" placeholder="Username" name="Username">
+                    </div>
+                    <div class="input-box">
+                        <i class='bx bxs-envelope'></i>   <!--عشان احط ايقونه الايميل-->
+                        <input type="Email" placeholder="Email" name="Email">
+                    </div>
+                    <div class="input-box">
+                        <i class='bx bxs-lock-alt'></i>    <!--عشان احط ايقونه القفل-->
+                        <input type="Password" placeholder="Password" name="Password">
+                    </div>
+                    <div class="input-box">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="Password" placeholder="Confirn Password" name="CPassword">
+                    </div>
+                    <a href="./Project-delivery.htm"><div class="button"><input type="submit" class="btn" onclick="validation()" value="Register"></div></a>
+                    <div class="group">
+                        <span><a href="./forget-password.htm">Forget-password</a></span>
+                        <span><a href="./Project-delivery.htm">Login</a></span>
+                    </div>
+                </form>
+            </div>
+            <div class="popup" id="popup">
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+                <h2>Thank you!</h2>
+                <p>Your were registration Sucessfully. Thanks</p>
+                <a href="./login.html"><button onclick="CloseSlide()">OK</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validation(){
+           if(document.formfill.Username.value==""){
+               document.getElementById("result").innerHtml="Enter Username*";
+               return false;
+           }
+           else if(document.formfill.Username.value.length<6){
+               document.getElementById("result").innerHtml="Atleast six letter*";
+               return false;
+           }
+           else if(document.formfill.Email.value==""){
+               document.getElementById("result").innerHtml="Enter your Email*";
+               return false;
+           }
+           else if(document.formfill.Password.value==""){
+               document.getElementById("result").innerHtml="Enter your Password*";
+               return false;
+           }
+           else if(document.formfill.Password.value.length<6){
+               document.getElementById("result").innerHtml="Password must be 6-digits*";
+               return false;
+           }
+           else if(document.formfill.Password.value!==document.formfill.CPassword.value){
+               document.getElementById("result").innerHtml="Password doesn't matched*";
+               return false;
+           }
+           else if(document.formfill.CPassword.value==""){
+               document.getElementById("result").innerHtml="Enter Confirm Password*";
+               return false;
+           }
+           else if(document.formfill.CPassword.value !== document.formfill.CPassword.value){
+               document.getElementById("result").innerHtml="Password doesn't matched*";
+               return false;
+           }
+           else if(document.formfill.Password.value !== document.formfill.CPassword.value){
+               popup.classList.add("open-slide")
+               return false;
+           }
+       }
+       validation()
+       var popup=document.getElementById('popup');
+       function CloseSlide(){
+           popup.classList.remove("open-slide")
+       }
+   </scriPT>
+</body>
+</html>

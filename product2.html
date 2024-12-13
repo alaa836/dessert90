@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --main-color: #443;
+      --border-radius: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+      background: #f9f9f9;
+    }
+
+    /* Header styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: var(--main-color);
+      color: #fff;
+    }
+
+    .header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .header .navbar a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .header .btn {
+      padding: 10px 20px;
+      background: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Product grid styling */
+    .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ثلاث أعمدة */
+  gap: 20px;
+  padding: 100px 10%;
+}
+
+    .product {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      color: var(--main-color);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .product-info p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .product-info span {
+      font-size: 1.2rem;
+      color: #ff5722;
+      font-weight: bold;
+    }
+
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      display: flex;
+      background: #fff;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      max-width: 800px;
+      width: 90%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content img {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    .modal-details {
+      padding: 20px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .modal-details h3 {
+      color: var(--main-color);
+      margin-bottom: 10px;
+    }
+
+    .modal-details p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .modal-details span {
+      font-size: 1.5rem;
+      color: #ff5722;
+      font-weight: bold;
+    }
+
+    .modal-details .add-to-cart {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Footer styling */
+    .footer {
+      background: var(--main-color);
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .footer .credit {
+      font-size: 1rem;
+    }
+    .category-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.category-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--main-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #e64a19;
+}
+/*التجاوب*/
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* عمودان للشاشات المتوسطة */
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header .navbar {
+    margin: 10px 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr); /* عمود واحد للشاشات الصغيرة */
+    padding: 20px;
+  }
+
+  .modal-content {
+    flex-direction: column; /* وضع عمودي للشاشات الصغيرة */
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: auto; /* جعل الصورة تستجيب لحجم العرض */
+  }
+
+  .modal-details {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .filter-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .product-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .product-info span {
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="logo">Dera Desert<i class="fas fa-cake"></i></a>
+    <nav class="navbar">
+      <a href="#Home">Home</a>
+      <a href="#About">About Us</a>
+      <a href="#Menu">Menu</a>
+      <a href="#Cake">Cake</a>
+      <a href="#Review">Review</a>
+      <a href="#Contact Us">Contact Us</a>
+    </nav>
+    <a href="cart.html" class="btn">Book a Cake</a>
+  </header>
+  <section class="category-section">
+    <h2>Categories</h2>
+    <div class="buttons">
+      <button class="filter-btn" data-category="all">All</button>
+      <button class="filter-btn" data-category="Cake">Cake</button>
+      <button class="filter-btn" data-category="Chocolate">Chocolate</button>
+    </div>
+  </section>
+  
+  <!-- Product grid -->
+  <section class="product-grid">
+    <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$15" data-type="Cake">
+      <img src="img/18485.jpg" alt="Chocolate Cake">
+      <div class="product-info">
+        <h3>Chocolate Cake</h3>
+        <p>Delicious chocolate cake.</p>
+        <span>$15</span>
+      </div>
+    </div>
+    
+    <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$5" data-type="Cake">
+        <img src="img/20741.jpg" alt="Chocolate Cake">
+        <div class="product-info">
+          <h3>Chocolate Cake</h3>
+          <p>Delicious chocolate cake.</p>
+          <span>$5</span>
+        </div>
+      </div>
+      <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$10" data-type="Cake">
+        <img src="img/22258.jpg" alt="Chocolate Cake">
+        <div class="product-info">
+          <h3>Chocolate Cake</h3>
+          <p>Delicious chocolate cake.</p>
+          <span>$10</span>
+        </div>
+      </div>
+      <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$10" data-type="Cake">
+        <img src="img/28264.jpg" alt="Chocolate Cake">
+        <div class="product-info">
+          <h3>Chocolate Cake</h3>
+          <p>Delicious chocolate cake.</p>
+          <span>$10</span>
+        </div>
+      </div>
+    
+      <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$15" data-type="Cake">
+        <img src="img/18485.jpg" alt="Chocolate Cake">
+        <div class="product-info">
+          <h3>Chocolate Cake</h3>
+          <p>Delicious chocolate cake.</p>
+          <span>$15</span>
+        </div>
+      </div>
+      
+      <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$5" data-type="Cake">
+          <img src="img/20741.jpg" alt="Chocolate Cake">
+          <div class="product-info">
+            <h3>Chocolate Cake</h3>
+            <p>Delicious chocolate cake.</p>
+            <span>$5</span>
+          </div>
+        </div>
+        <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$10" data-type="Cake">
+          <img src="img/22258.jpg" alt="Chocolate Cake">
+          <div class="product-info">
+            <h3>Chocolate Cake</h3>
+            <p>Delicious chocolate cake.</p>
+            <span>$10</span>
+          </div>
+        </div>
+        <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$10" data-type="Cake">
+          <img src="img/28264.jpg" alt="Chocolate Cake">
+          <div class="product-info">
+            <h3>Chocolate Cake</h3>
+            <p>Delicious chocolate cake.</p>
+            <span>$10</span>
+          </div>
+        </div>
+        <div class="product" data-name="Chocolate Cake" data-desc="A rich and moist chocolate cake." data-price="$5" data-type="Cake">
+            <img src="img/20741.jpg" alt="Chocolate Cake">
+            <div class="product-info">
+              <h3>Chocolate Cake</h3>
+              <p>Delicious chocolate cake.</p>
+              <span>$5</span>
+            </div>
+          </div>
+      
+      <!-- Repeat for more products -->
+    
+    <!-- Repeat for more products -->
+  
+</section>
+
+  <!-- Modal -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <img id="modal-img" src="" alt="Product Image">
+      <div class="modal-details">
+        <h3 id="modal-name"></h3>
+        <p id="modal-desc"></p>
+        <p><strong>Price:</strong> <span  id="modal-price"></span></p>
+        <p><strong>Type:</strong> <span id="modal-type"></span></p>
+        <p><strong>Add-ons::</strong>
+        <select id="add-ons">
+            <option value="none">No thing</option>
+            <option value="chocolate">Chocolate </option>
+            <option value="sauce">Sauce</option>
+            <option value="Cream">Cream</option>
+        </select>
+        </p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="credit">Created by <span>mr.web designer</span> | All rights reserved</div>
+  </footer>
+
+  <script>
+    // Handle product click
+    const products = document.querySelectorAll('.product');
+    const modal = document.getElementById('product-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalName = document.getElementById('modal-name');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalPrice = document.getElementById('modal-price');
+    const modalType = document.getElementById('modal-type');
+    const closeModal = document.querySelector('.close-modal');
+
+    products.forEach(product => {
+      product.addEventListener('click', () => {
+        const { name, desc, price, type } = product.dataset;
+        modalImg.src = product.querySelector('img').src;
+        modalName.textContent = name;
+        modalDesc.textContent = desc;
+        modalPrice.textContent = price;
+        modalType.textContent = type;
+        modal.style.display = 'flex';
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

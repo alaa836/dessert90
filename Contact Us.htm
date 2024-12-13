@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./Project-delivery.htm">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="./map.htm">
+    <style>
+               /*navbar start*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&diplay=swap');
+:root{
+    --main-color:#443;
+    --border-radius:95% 4% 97% 5% / 4% 94% 3% 95%;
+    --border-radius-hover:4% 95% 6% 95% / 95% 4% 92% 5%;
+    --border:.2rem solid var(--main-color);
+    --border-hover:.2rem dashed var(--main-color);
+}
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline:none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+/* body{
+    /*background-color: aliceblue;
+    background-image: url(../../Pictures/download\ \(32\).jpeg );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} */
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+.btn{
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--main-color);
+    background: none;
+    border: var(--border);
+    cursor: pointer;      /*عشان لما يشاور يدي علامه اليد*/
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+.btn:hover{
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding: 2rem 9%;
+}
+.header .logo{
+    color:var(--main-color);
+    font-size: 2.3rem;
+}
+.header .logo i{
+    padding-left: .5rem;
+}
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+.header .btn{
+    margin-top: 0;
+}
+.navbar a:hover{
+    color:white;
+    /*background-color: #2e1700;*/
+    background-color: rgb(196, 160, 95);
+}
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+
+.header #btn:hover{
+    background-color: rgb(196, 160, 95);
+    color: white;
+    border: #443;
+    border-radius: var(--main-color);
+}
+.header .btn{
+    margin-top: 0;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding: 2rem 9%;
+}
+.header .logo{
+    color:var(--main-color);
+    font-size: 2.3rem;
+}
+/*navbar end*/
+/* .bot1:hover{
+      padding-right: 2rem;
+    font-size: large;    
+}  */
+
+.rty:hover{
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+/* .elementor-icon-box-description:hover{
+    padding-right: 2rem;
+    font-size: large;
+} */
+
+.rty{
+    display: inline-block;
+    /* padding: .9rem 1.5rem; */
+    border-radius: var(--border-radius);
+    color: var(--main-color);
+    background: none;
+    border: var(--border);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    width: 48%; 
+    padding-top: 15%;
+    padding-right: 2rem;
+    font-size: large;  
+}
+.qwe{
+width: 35px;
+}
+.sdf{
+   display: flex;
+   flex-wrap: nowrap;
+ 
+}
+.text{
+    flex: 1;text-align: left;
+}
+.contact-img {
+    width: 40%;
+    height: 40%;
+    border-radius: 50%; /* جعل الصورة دائرية */
+    border: 2px solid #999a9a;
+    margin-bottom: 40px;
+}
+.right {
+    width: 60%; /* عرض متساوٍ لكل قسم */
+    background-color: #f9f9f9; /* لون خلفية خفيف */
+    padding:0px; /* مسافة داخلية */
+    border-radius: 10px; /* حواف دائرية */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); ظل خفيف */
+}
+/* حاوية الأقسام */
+.container {
+    display: flex;
+    justify-content: space-between; /* توزيع المساحة بين الأقسام */
+    align-items: flex-start; /* محاذاة الأقسام من الأعلى */
+    gap: 20px; /* مسافة بين العناصر */
+    margin: 20px auto;
+    width: 80%; /* عرض الحاوية */
+    max-width: 1200px; /* عرض ثابت إذا زاد حجم الشاشة */
+}
+
+/* التنسيق الخاص بالأقسام */
+.left, .right {
+    width: 48%; /* عرض متساوٍ لكل قسم */
+    background-color: #f9f9f9; /* لون خلفية خفيف */
+    padding: 20px; /* مسافة داخلية */
+    border-radius: 10px; /* حواف دائرية */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+/* تصميم النصوص */
+.left label, .right p {
+    font-family: Arial, sans-serif; /* خط واضح */
+    font-size: 14px; /* حجم النص */
+    color: #333; /* لون نص داكن */
+    margin-bottom: 10px; /* مسافة بين النصوص */
+    display: block;
+}
+
+/* الحقول */
+.left input, .left textarea, .left button {
+    width: 100%; /* ملء العرض */
+    padding: 10px; /* مسافة داخلية */
+    margin-bottom: 15px; /* مسافة بين العناصر */
+    border: 1px solid #ccc; /* إطار خفيف */
+    border-radius: 5px; /* حواف دائرية */
+    font-size: 14px; /* حجم الخط */
+}
+
+/* الزر */
+.left button {
+    background-color: #007bff; /* لون أزرق */
+    color: white; /* لون نص أبيض */
+    border: none; /* إزالة الإطار */
+    cursor: pointer; /* تغيير المؤشر عند التمرير */
+    transition: background-color 0.3s ease; /* تأثير الانتقال */
+}
+
+.left button:hover {
+    background-color: #0056b3; /* لون أزرق أغمق عند التمرير */
+}
+
+/* نصوص القسم الأيمن */
+.right p {
+    margin: 10px 0; /* مسافة عمودية بين الفقرات */
+    line-height: 1.5; /* ارتفاع الأسطر */
+}
+
+.right p strong {
+    color: #007bff; /* إبراز النصوص المهمة */
+}
+
+/* تحسين عام */
+body {
+    font-family: Arial, sans-serif; /* خط رئيسي */
+    background-color: #f3f4f6; /* لون خلفية الصفحة */
+    margin: 0;
+    padding: 0;
+}
+.left button {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* لون متدرج */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* جعل الأقسام فوق بعضها */
+        gap: 10px;
+    }
+
+    .left, .right {
+        width: 100%; /* ملء العرض الكامل */
+    }
+}
+.fgh{
+    width: 48%; 
+    padding-top: 15%;
+
+}
+/*footer start*/
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(23rem,1fr));
+    gap: 1.5rem;
+}
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: var(--main-color);
+}
+.footer .box-container .box a{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: var(--main-color);
+    display: block;
+}
+.footer .box-container .box a i{
+    padding-right: .5rem;
+}
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+.footer .credit{
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    color: var(--main-color);
+}
+.footer .credit span{
+    border-bottom: var(--border-hover);
+}
+.navbar a:hover{
+    color:white;
+    /*background-color: #2e1700;*/
+    background-color: rgb(196, 160, 95);
+}
+/*footer end*/
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="#" class="logo">Dera Dessert <i class='bx bxs-cake'></i></i></a>
+        <nav class="navbar">
+            <a href="./Project-delivery.htm">Home</a>
+            <a href="./About .htm">About Us</a>
+            <a href="./product.htm">Categories</a>
+            <a href="./Cake.htm">Cake</a>
+            <a href="./cart2.html">Cart</a>
+            <a href="#contact">Review</a>
+            <a href="./Contact Us.htm">Contact Us</a>
+            <!--<a href="./login.html" target="_blank">Log in</a></a>-->
+        </nav>
+            <a href="./booking.htm" class="btn">book a cake</a>
+            <a href="./login.htm" class= "btn" id="btn">Log in</a>
+    </header>
+<div class="container"></div>
+<div class="col-sm-12"></div>
+<section class="container" >
+ <h1  class="rty" style="font-size: 120px; border: none;">Contact</h1></div>
+ <img id="left" src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-12-01 في 21.02.43_35c07fe3.jpg" alt="Contact Profile" class="contact-img" style="margin-top: 70px;">
+</section>
+      <section class="">
+<h2 style="text-align:center;">Message US</h3>
+<p style="text-align: center;" class="bot1">  Click edit button to change this text.Lorem ipsum dolor amet, consec tetur.</p>
+      
+</section> 
+
+
+<section style="width: 100%;" class="col-sm-12 col-md-6 " >
+    <div class="container">
+<div class="left"class="col-sm-12 col-md-6 "   >
+<form action="value contact.html"method="get">
+<label>ID</label>
+<input type="hidden"name="id">
+<br>
+<label for="name" tabindex="1" accesskey="1">name</label>
+<input name="name" id="name" type="text" placeholder="name">
+<br><br>
+<label for="email">email</label>
+<input name="email" id="email" type="email"placeholder="email">
+<br><br>
+<label  for="wpforms-5-field_2">Message *</span></label>
+<textarea id="wpforms-5-field_2" class="required" name="wpforms[fields][2]" required=""></textarea>
+<br><br>
+<button type="submit" name="wpforms[submit]" id="wpforms-submit-5" class="wpforms-submit"  value="wpforms-submit">Send</button>
+</form>
+</div>
+<div class="right"class="col-sm-12 col-md-6 "  >
+   <div>
+      <img class="qwe" src="../../Pictures/iconlocation.icon" alt="">
+      <h5 class="elementor-icon-box-title"> <span> Address</span></h5>
+
+      <p class="elementor-icon-box-description"> 2972 Westheimer Rd. Santa Ana, Illinois 85486</p>
+   </div>
+  <div>
+    <img class="qwe" src="../../Pictures/iconmail.icon" alt="">
+    <h5 class="elementor-icon-box-title"><span> Email</span> </h5>
+    <p class="elementor-icon-box-description">	Dera desert@gmail.com</p>
+  </div>
+  <div>
+    <img  class="qwe"src="c:\Users\mosa\Pictures\iconphone.icon" alt="">
+    <h5 class="elementor-icon-box-title"><span>Phone</span></h5>
+    <p class="elementor-icon-box-description">(405) 555-0128</p>
+    </div>
+</div>
+<br><br><br>
+</div>
+</section>
+
+<iframe src="./map.htm" width="100%" height="500px" style="border: none;"  frameborder="0"></iframe>
+ 
+<section>
+
+
+</section>
+<hr>
+<!--<section>
+    <div style="text-align: center;">
+        <h4>Dera desert@gmail.com|Powered by Dera desert Shop</h4>
+    </div>
+</section>-->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Our Branches</h3>
+            <a href="#"><i class="fas fa-arrow-right"></i>India</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>USA</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>France</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>Africa</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>Japan</a>
+        </div>
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="#"><i class="fas fa-arrow-right"></i>Home</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>About Us</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>Menu</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>Cake</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>Review</a>
+            <a href="#"><i class="fas fa-arrow-right"></i>ontact Us</a>
+        </div>
+        <div class="box">
+            <h3>Contact info</h3>
+            <a href="#"><i class="fas fa-phone"></i>+123-456-7890</a>
+            <a href="#"><i class="fas fa-phone"></i>+111-222-3333</a>
+            <a href="#"><i class="fas fa-envelope"></i>shaikhanas@gmail.com</a>
+            <a href="#"><i class="fas fa-envelope"></i>mumbai,india=400104</a>
+        </div>
+        <div class="box">
+            <h3>Contact info</h3>
+            <a href="#"><i class="fab fa-facebook"></i>facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+            <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+        </div>
+    </div>
+    <div class="credit">creatd by<span>mr.web designer</span>all rights reserved</div>
+    <section>
+        <div style="text-align: center;">
+            <h4>Dera desert@gmail.com|Powered by Dera desert Shop</h4>
+        </div>
+    </section>
+  </section>
+ 
+  <!--footer end-->
+
+     <script src="bootstrap.js"></script>
+</body>
+</html>

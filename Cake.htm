@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakes</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+/*header start*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&diplay=swap');
+:root{
+    --main-color:#443;
+    --border-radius:95% 4% 97% 5% / 4% 94% 3% 95%;
+    --border-radius-hover:4% 95% 6% 95% / 95% 4% 92% 5%;
+    --border:.2rem solid var(--main-color);
+    --border-hover:.2rem dashed var(--main-color);
+}
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline:none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+body{
+    /*background-color: aliceblue;*/
+    background-image: url(../../Pictures/download\ \(32\).jpeg );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+.btn{
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--main-color);
+    background: none;
+    border: var(--border);
+    cursor: pointer;      /*عشان لما يشاور يدي علامه اليد*/
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+.btn:hover{
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding: 2rem 9%;
+}
+.header .logo{
+    color:var(--main-color);
+    font-size: 2.3rem;
+}
+.header .logo i{
+    padding-left: .5rem;
+}
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+.header .btn{
+    margin-top: 0;
+}
+.navbar a:hover{
+    color:white;
+    /*background-color: #2e1700;*/
+    background-color: rgb(196, 160, 95);
+}
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+section{
+    padding: 2rem 9%;
+}
+.header #btn:hover{
+    background-color: rgb(196, 160, 95);
+    color: white;
+    border: #443;
+    border-radius: var(--main-color);
+}
+.header .btn{
+    margin-top: 0;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding: 2rem 9%;
+}
+.header .logo{
+    color:var(--main-color);
+    font-size: 2.3rem;
+}
+.heading{
+    font-size: 9rem;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: .05rem var(--main-color);
+    letter-spacing: .2rem;
+    text-align: center;
+    pointer-events: none;
+    position: relative;
+}
+.heading span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: var(--main-color);
+    font-size: 3rem;
+}
+.cakes-9{
+    margin-top: 100px;
+}
+/*header end*/
+/*cake section start*/
+h3{
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    padding-top: 10px;
+}
+a{
+    text-decoration: none;
+}
+.cake{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+.c{
+    width: 20%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0 14px 28 px rgba(0, 0, 0, 0.25);
+    transition: .4s;
+    background-color: #f2f2f2;
+}
+.c:hover{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+}
+.b{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.p{
+    text-align: center;
+    color: #2e1700;
+    padding-top: 0 8px;
+}
+.h6{
+    font-size: 26px;
+    text-align: center;
+    color: #2e1700;
+    margin: 0;
+}
+.ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.li{
+    padding: 5px;
+}
+.bx{
+    font-size: 26px;
+    transition: .4s;
+   
+}
+.checked{
+    color: #ff9f43;
+}
+.bx:hover{
+    transform: scale(1.3);    /*عشان النجمه تطلع لبرا*/
+    transition: .6s;
+}
+.card-1{
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    background-color: #412306;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+.card-2{
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(211, 165, 80);
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.card-3{
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(204, 140, 151);
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.card-4{
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(236, 78, 105);
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+/*cake section end*/
+/*footer start*/
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(23rem,1fr));
+    gap: 1.5rem;
+}
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: var(--main-color);
+}
+.footer .box-container .box a{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: var(--main-color);
+    display: block;
+}
+.footer .box-container .box a i{
+    padding-right: .5rem;
+}
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+.footer .credit{
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    color: var(--main-color);
+}
+.footer .credit span{
+    border-bottom: var(--border-hover);
+}
+/*footer end*/
+    </style>
+</head>
+<body>
+    <!--header start-->
+       <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="#" class="logo">Dera Dessert <i class='bx bxs-cake'></i></i></a>
+        <nav class="navbar">
+            <a href="./Project-delivery.htm">Home</a>
+            <a href="./About .htm">About Us</a>
+            <a href="./product.htm">Categories</a>
+            <a href="./Cake.htm">Cake</a>
+            <a href="./cart2.html">CaRT</a>
+            <a href="#contact">Review</a>
+            <a href="./Contact Us.htm">Contact Us</a>
+
+            <!--<a href="./login.html" target="_blank">Log in</a></a>-->
+        </nav>
+            <a href="./booking.htm" class="btn">book a cake</a>
+            <a href="./login.htm" class= "btn" id="btn">Log in</a>
+    </header>
+    <!--header end-->
+    <!--cake start-->
+    <section class="cakes-9">
+    <h1 class="heading">Cakes<span>Our Product</span></h1>
+    </section>
+    <div class="cake">
+        
+        <div class="c">
+            
+            <img src="../../Pictures/download (1).jpeg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+            <h3>Chocolate Cake</h3>
+            <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+            <h6 class="h6">150.00LE</h6>
+            <ul class="ul">
+                <li class="li"><i class='bx bxs-star checked'></i></li>   <!--عشان احط النجوم وده تبع مكتبه boxicons-->
+                <li class="li"><i class='bx bxs-star checked'></i></li>
+                <li class="li"><i class='bx bxs-star checked'></i></li>
+                <li class="li"><i class='bx bxs-star checked'></i></li>
+                <li class="li"><i class='bx bxs-star checked'></i></li>
+            </ul>
+            <a href="./cart2.html"><button class="card-1">Add Card</button></a>
+        </div>
+        <div class="c">
+            <img src="../../Pictures/download (33).jpeg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+            <h3>Donats</h3>
+            <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+            <h6 class="h6">90.00LE</h6>
+            <ul class="ul">
+                <li class="li"><i class='bx bxs-star checked'></i></li>
+                <li class="li"><i class='bx bxs-star checked'></i></li>
+                <li class="li"><i class='bx bxs-star checked'></i></li>
+                <li class="li"><i class='bx bxs-star'></i></li>
+                <li class="li"><i class='bx bxs-star'></i></li>
+            </ul>
+            <a href="./cart2.html"> <button class="card-2">Add Card</button></a>
+        </div>
+            <div class="c">
+                <img src="../../Pictures/download (35).jpeg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                <h3>Cup Cake</h3>
+                <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                <h6 class="h6">100.00LE</h6>
+                <ul class="ul">
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star'></i></li>
+                </ul>
+                <a href="./cart2.html"> <button class="card-3">Add Card</button></a>
+              </div>
+                <div class="c">
+                    <img src="../../Pictures/images (25).jpeg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                    <h3>Molten Cake</h3>
+                    <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                    <h6 class="h6">70.00LE</h6>
+                    <ul class="ul">
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                    </ul>
+                    <a href="./cart2.html"> <button class="card-4">Add Card</button></a>
+                </div>
+        </div>
+
+        <div class="cake">
+        
+            <div class="c">
+                
+                <img src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-11-27 في 13.23.59_15739e59.jpg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                <h3>Strawberry Cake</h3>
+                <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                <h6 class="h6">50.00LE</h6>
+                <ul class="ul">
+                    <li class="li"><i class='bx bxs-star checked'></i></li>   <!--عشان احط النجوم وده تبع مكتبه boxicons-->
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                </ul>
+                <a href="./cart2.html"><button class="card-1" style="background-color: rgb(129, 26, 26);">Add Card</button></a>
+            </div>
+            <div class="c">
+                <img src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-11-27 في 13.23.18_0744e15a.jpg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                <h3>Fruit Cake</h3>
+                <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                <h6 class="h6">80.00LE</h6>
+                <ul class="ul">
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star checked'></i></li>
+                    <li class="li"><i class='bx bxs-star'></i></li>
+                    <li class="li"><i class='bx bxs-star'></i></li>
+                </ul>
+               <a href="./cart2.html"> <button class="card-2" style="background-color: rgb(218, 218, 99);">Add Card</button></a>
+            </div>
+                <div class="c">
+                    <img src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-11-27 في 13.23.36_047645ac.jpg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                    <h3>Vanilla Cake</h3>
+                    <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                    <h6 class="h6">90.00LE</h6>
+                    <ul class="ul">
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                        <li class="li"><i class='bx bxs-star checked'></i></li>
+                        <li class="li"><i class='bx bxs-star'></i></li>
+                    </ul>
+                    <a href="./cart2.html"><button class="card-3" style="background-color: #f0c399;">Add Card</button></a>
+                  </div>
+                    <div class="c">
+                        <img src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-11-27 في 13.24.20_45b76089.jpg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                        <h3>Cherry Cake</h3>
+                        <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                        <h6 class="h6">70.00LE</h6>
+                        <ul class="ul">
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                        </ul>
+                        <a href="./cart2.html"><button class="card-4" style="background-color: rgb(255, 131, 156);">Add Card</button></a>
+                    </div>
+                    <div class="c">
+                        <img src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-11-27 في 13.24.44_704a93c5.jpg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                        <h3>Lotus Cake</h3>
+                        <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                        <h6 class="h6">60.00LE</h6>
+                        <ul class="ul">
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                        </ul>
+                        <a href="./cart2.html"><button class="card-3" style="background-color: rgb(255, 131, 156);">Add Card</button></a>
+                        </div>
+                        <div class="c">
+                        <img src="c:\Users\mosa\Pictures\صورة واتساب بتاريخ 2024-11-27 في 13.25.00_e5e4ea93.jpg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                        <h3>Caramel Cake</h3>
+                        <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                        <h6 class="h6">79.00LE</h6>
+                        <ul class="ul">
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                        </ul>
+                        <a href="./cart2.html"><button class="card-4" style="background-color:rgb(250, 185, 106)">Add Card</button></a>
+                       </div>
+                    <div class="c">
+                        <img src="../../Pictures/images (1).jpeg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                        <h3>Cheese Cake</h3>
+                        <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                        <h6 class="h6">88.00LE</h6>
+                        <ul class="ul">
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                        </ul>
+                        <a href="./cart2.html"><button class="card-4" style="background-color: pink;">Add Card</button></a>
+                    </div>
+                    <div class="c">
+                        <img src="../../Pictures/download (10).jpeg" class="b" style=" border-radius: 50%;margin-bottom: .7rem;">
+                        <h3>Dark donuts</h3>
+                        <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, soluta, quo, iure nobis consequatur quaerat</p>
+                        <h6 class="h6">30.00LE</h6>
+                        <ul class="ul">
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                            <li class="li"><i class='bx bxs-star checked'></i></li>
+                        </ul>
+                        <a href="./cart2.html"><button class="card-4" style="background-color: rgb(46, 2, 2);">Add Card</button></a>
+                    </div>
+            </div>
+    </div>
+    <!--cake end-->
+    <!--footer start-->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Our Branches</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i>India</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>USA</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>France</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Africa</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Japan</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i>Home</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>About Us</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Menu</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Cake</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Review</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>ontact Us</a>
+            </div>
+            <div class="box">
+                <h3>Contact info</h3>
+                <a href="#"><i class="fas fa-phone"></i>+123-456-7890</a>
+                <a href="#"><i class="fas fa-phone"></i>+111-222-3333</a>
+                <a href="#"><i class="fas fa-envelope"></i>shaikhanas@gmail.com</a>
+                <a href="#"><i class="fas fa-envelope"></i>mumbai,india=400104</a>
+            </div>
+            <div class="box">
+                <h3>Contact info</h3>
+                <a href="#"><i class="fab fa-facebook"></i>facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+            </div>
+        </div>
+        <div class="credit">creatd by<span>mr.web designer</span>all rights reserved</div>
+        <section>
+            <div style="text-align: center;">
+                <h4>Dera desert@gmail.com|Powered by Dera desert Shop</h4>
+            </div>
+        </section>
+    </section>
+      <!--footer end-->
+</body>
+</html>
